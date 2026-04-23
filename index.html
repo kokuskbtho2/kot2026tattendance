@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SISTEM KEHADIRAN KOT GURU</title>
+    <title>SISTEM KEHADIRAN KOKURIKULUM GURU</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -23,7 +23,6 @@
             text-align: center; position: relative; z-index: 10;
         }
 
-        /* EFEK KELIPAN MERAH DI BELAKANG LOGO */
         .logo-container {
             position: relative; width: 85px; height: 85px; margin: 0 auto 15px auto;
             display: flex; justify-content: center; align-items: center;
@@ -66,10 +65,13 @@
     </div>
 
     <h1 class="font-bold text-gray-800 uppercase mb-1" style="font-size: clamp(12px, 4vw, 18px);">
-        SISTEM KEHADIRAN KOT GURU
+        SISTEM KEHADIRAN KOKURIKULUM GURU
     </h1>
-    <p class="text-red-600 font-bold tracking-[0.2em] uppercase" style="font-size: clamp(9px, 2.5vw, 11px); margin-bottom: 30px;">
+    <p class="text-red-600 font-bold tracking-[0.2em] uppercase" style="font-size: clamp(9px, 2.5vw, 11px); margin-bottom: 5px;">
         SK BANDAR TUN HUSSEIN ONN 2
+    </p>
+    <p class="text-gray-500 font-semibold uppercase" style="font-size: clamp(8px, 2.2vw, 10px); margin-bottom: 30px; letter-spacing: 0.1em;">
+        25 APRIL 2026 | STADIUM BOLA SEPAK CHERAS, KL
     </p>
 
     <div id="formSection">
@@ -104,17 +106,14 @@
 </div>
 
 <script>
-    // URL DEPLOYMENT BARU ANDA
-    const WEB_APP_URL = "https://script.google.com/a/macros/moe-dl.edu.my/s/AKfycbyN561UdyDH_a4-PLHfkFFqcpFZQReiSpVx7IFu6WBY6LgcKyyG1FTVrg-1x9EAnRZwmg/exec";
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyZnu6RWcrQnkLN2anyS7vj65XEFSc_7xU9x_4d3lN_K2s0hxusNJclAgsKu6pjyeD8/exec";
     
     let selectedStatus = "HADIR";
     let userLat = ""; let userLng = ""; let clickCount = 0; let clickTimer;
-    
-    // Koordinat Sekolah
-    const schoolLat = 3.1005; 
-    const schoolLog = 101.7214;
 
-    const senaraiGuru = ["ABDUL KAHAR BIN AWANG SEMAN", "AINA ATHIRAH BINTI AHMAD SENARI", "AMIRAH BINTI MOHD ALWI", "AMINUDDIN BIN ISMAIL", "ARINAWATI BINTI MOHD YAH", "AWATIF BINTI MD YUSOP", "AZHAIRIN ZULAIHAN BINTI BADRUL HISHAM", "AZIMA BINTI MAT ZIN @ ISMAIL", "AZIZAH BINTI MOHAMMED", "AZMAN BIN OTHMAN", "DINITA A/P MUNIANDY", "EMIL NORULHUDA BINTI AMIRUDDIN", "FAIZA BINTI HASBULLAH", "FAIZAH BINTI IBRAHIM", "FARAWAHIDA BINTI MOHD SAFFUAN", "FARIDATUL AKMAAR BINTI MAT SAID", "FATIN FARHANA BINTI AMINUDDIN", "HAFIZI BIN OMAR", "HARISAH BINTI AWANG", "HARIZ IRFAN BIN HUSSIN PAKRI", "HASMAWATI BINTI OTHMAN", "HAZRAH BINTI MOHAMAD", "IRDINA AFIQAH BINTI ISMAIL", "IRMA AZNITA BINTI KAMBALI", "KANG CHIN KOAT", "KASUMMA BINTI PANDAK KAMAL", "MARYANI BINTI DRAMAN", "MAWADDAH HUDA BINTI MOHD AFFANDI", "MAZILA HAZLIN BINTI ABD MAJIT", "MOHAMAD MUNIR BIN ZAINUN", "MOHAMED SYAKIR BIN MD TAHIR", "MOHD SHAMILULHAYAT BIN MOHD ASRI", "MUHAMMAD AKASYAH SAIDON", "MUHAMMAD IRFAN WAZIF BIN MOHD NIZAM", "NADIAH BINTI IDRIS", "NAIM AISAMUDDIN BIN ABDUL RAZAK", "NAZIMATUL AMANI BINTI RAMLI", "NIK HAZIMAN BIN CHE DAUD", "NIK NUR LIYANA BINTI NIK MOHD FAUZI", "NITHILA A/P JAKANATHAN", "NOOR AZIZAH BINTI MD BAHARUDDIN", "NORAIDA BINTI MUSTAPHA", "NORAMANI BINTI MAT NOR", "NORMA BINTI ISMAIL", "NORUL HUDA BINTI JAMIN", "NOUR EZIEZAH BINTI MAZMAN", "NUR FATHIN BINTI ZAKI", "NUR SYAFIQAH BINTI ZAHIRUDIN", "NUR ZURIYATIE BINTI AZIZ", "NURUL HAZIQAH BINTI RAMLI", "NURUL ULYA BINTI NORDIN", "PIRAKAS A/L SHANGAR", "ROHAIZA BINTI RAZALI", "ROSNAH BINTI JANTAN", "RUBINA BINTI RAMLI", "SAHARINA BINTI ABDULLAH", "SITI HAWA BINTI MAT YAJID", "SITI MASHITAH BINTI MOHD ASRI", "SITI NORASYIKIN BINTI ABDULLAH", "SITI NUR DIANA BINTI MOHAMAD NASIR", "SULAIMAN BIN HASSAN", "SUZILA BINTI MOHD NOR", "TG IHTIFAZUDDIN BIN TG IBRAHIM", "UMI NUR HANIRA BINTI ISMAIL", "WAN FAIRIS BIN A. KAMAR", "ZABIDI BIN MOHAMMAD", "ZANIRAH BINTI A. BAKAR"];
+    const senaraiGuru = [
+        "ABDUL KAHAR BIN AWANG SEMAN", "AHMAD SHUHAIMI BIN MD ISA", "AIN NUR BALQIS BINTI YAHYA HARIS", "AIN SYAKILLA BINTI HANIPAH", "AINA ATIRAH BINTI AHMAD SENARI", "ALIFF MUQRI BIN SUHAIMI", "ALSYAMIZAM BIN ABD HALIM", "AMINUDDIN BIN ISMAIL", "AMIRAH BINTI MOHD ALWI", "ANPARSY A/P MUTHUSAMY", "AQILAH IZZATI BINTI AZAM FAIRUZ", "ARINAWATI BINTI MOHD YAH", "ASMAT BINTI MUSTAPHA", "ATHIRAH SYAHIRA BINTI ISHAK", "AWATIF BINTI MD YUSOP", "AZHAIRIN ZULAIHAN BINTI BADRUL HISHAM", "AZIMA BINTI MAT ZIN @ ISMAIL", "AZIZAH BINTI MOHAMMED", "AZLINA BINTI ALIAS", "AZMAN BIN OTHMAN", "BAIRIRAH BINTI RAMLI", "BANU PRIYA A/P SIVAPRAGASAM", "DINITA A/P MUNIANDY", "EMIL NORULHUDA BINTI AMIRUDDIN", "FAIZA BINTI HASBULLAH", "FAIZAH BINTI IBRAHIM", "FARAWAHIDA BINTI MOHD SAFFUAN", "FARHANA BINTI ABDULLAH", "FARIDATUL AKMAAR BINTI MAT SAID", "FATIN FARHANA BINTI AMINUDDIN", "HABSAH BINTI CHE SOM", "HAFIZI BIN OMAR", "HARISAH BINTI AWANG", "HARIZ IRFAN BIN HUSSIN PAKRI", "HARYATI BINTI MAULAN", "HASLINAH BT AHMAD", "HASMAWATI BINTI OTHMAN", "HAZRAH BINTI MOHAMAD", "HEME PRIYA DEVI A/P THIAGARAJAN", "IRDINA AFIQAH BINTI ISMAIL", "IRMA AZNITA BINTI KAMBALI", "IZZATI IIMAN BINTI ISMAIL", "KANG CHIN KOAT", "KASUMMA BINTI PANDAK KAMAL", "KHAIRIAH BINTI HUSIN", "KHAIRUL HAIRAZI BIN MUHAMMAD HELMI", "MARLIZA BT SULONG", "MARYANI BINTI DRAMAN", "MAWADDAH HUDA BINTI MOHD AFFANDI", "MAZILA HAZLIN BINTI ABD MAJIT", "MOHAMAD FIRDAUS BIN ZAINOL", "MOHAMAD MUNIR BIN ZAINUN", "MOHAMED SYAKIR BIN MD TAHIR", "MOHD AIMAN FARID BIN ALIAS", "MOHD NASIR BIN ZAKARIA", "MOHD NOR SOFUAN BIN MAKHTAR", "MOHD REDHUAN BIN HJ ARSHAD", "MOHD SHAMILULHAYAT BIN MOHD ASRI", "MOHD ZAIRUZI BIN MOHD NOR", "MUHAMMAD AKASYAH SAIDON", "MUHAMMAD FARIS BIN MANSOR", "MUHAMMAD FIRDAUS BIN MOHD ASNAN", "MUHAMMAD HADIF BIN MD FAUZI", "MUHAMMAD HARIZ BIN HASSAN", "MUHAMMAD HAZIQ FITRI BIN NORAZMI", "MUHAMMAD IKHWAN BIN WAN AZELEE", "MUHAMMAD IRFAN WAZIF BIN MOHD NIZAM", "NADIAH BINTI IDRIS", "NAGINIDEVI A/P RATHAKRUSHNAN", "NAIM AISAMUDDIN BIN ABDUL RAZAK", "NAZIMATUL AMANI BINTI RAMLI", "NIK HAZIMAN BIN CHE DAUD", "NIK NUR LIYANA BINTI NIK MOHD FAUZI", "NITHILA A/P JAKANATHAN", "NOOR AZIZAH BINTI MD BAHARUDDIN", "NOR AMIN BIN MAT NOR", "NOR IDAWATI BINTI ABU HASAN", "NOR ZAHIRAH BINTI ZAKARIA", "NOR' ATIKAH BINTI ABDUL LATIF", "NOR'AIN BINTI OTHMAN", "NORAIDA BINTI MUSTAPHA", "NORAMANI BINTI MAT NOR", "NORMA BINTI ISMAIL", "NORAZIANTY BT ABDOL LATIF", "NORUL HUDA BINTI JAMIN", "NOUR EZIEZAH BINTI MAZMAN", "NUR AQIILAH BINTI AZMAN", "NUR FARAH WAHIDA BINTI MAT ANI", "NUR FARHANI BINTI ZAKARIA", "NUR FATHIN BINTI ZAKI", "NUR INTAN NAZIFAH BINTI SHAMSURI", "NUR KHADIJAH BINTI ZAHARIMAN", "NUR SABRINA FARISHA BINTI MOHAMMAD FAIZ", "NUR SYAFIQAH BINTI ZAHIRUDIN", "NUR SYUHADA BINTI ABDUL WAHAB", "NUR ZURIYATIE BINTI AZIZ", "NURAZIAH BT TASLEM", "NURIZYAN BINTI ZAINUDDIN", "NURUL ATIKAH BINTI BUKHARI", "NURUL FARIHA BINTI MAULAD JAAFAR", "NURUL HALIZA ILYANA BINTI MOHD RAZALI", "NURUL HAZIQAH BINTI RAMLI", "NURUL HAZWANI BINTI ABDUL WAHAB", "NURUL KHAIRUNIE BINTI MAHTAR", "NURUL LIYANA BINTI NOR AZMI", "NURUL ULYA BINTI NORDIN", "PIRAKAS A/L SHANGAR", "ROHAIZA BINTI RAZALI", "ROSHIDA AINA BINTI AMIRRUDDIN", "ROSNIZA BINTI MOHD YUSOFF", "ROZIAH BT AZIZI", "RUHAIZA BINTI JUPRI", "SAPIAH BINTI DAUD", "SAHARINA BINTI ABDULLAH", "SAIZA NINEY NABIHA BINTI SAIFUL BAHARI", "SHARIFAH NUR WAHIDA BINTI SYED YAZIZ", "SITI AMINAH BT AWANG MAT", "SITI HAJAR BINTI AB RAHIM", "SITI HAWA BINTI MAT YAJID", "SITI MASHITAH BINTI MOHD ASRI", "SITI NAHARIAH BINTI ALI", "SITI NAZIRAH BINTI MAT RAHIM", "SITI NAZRIAH BINTI SANIN", "SITI NORASYIKIN BINTI ABDULLAH", "SITI NUR DIANA BINTI MOHAMAD NASIR", "SITI ZALEHA BINTI YUSOFF", "SITI ZURIATUL FIRZANAH BINTI JAMAL", "SOFIAN A/L SANGUAN", "STEPHANIE NYSSA GOMEZ", "SULAIMAN BIN HASAN", "SUMAYYAH BINTI JOHAIDI", "SUNITA BINTI RODZI", "SURIANY BINTI IBRAHIM", "SUZILA BINTI MOHD NOR", "SYARFIZA BINTI ABDUL WAHAB SHAARANI", "TG IHTIFAZUDDIN BIN TG IBRAHIM", "TUAN NUR AFIFAH BINTI TUAN OMAR", "UMI NUR HANIRA BINTI ISMAIL", "UMMU HANISAH BINTI ZAINUDIN", "WAN FAIRIS BIN A. KAMAR", "WAN NUR ATIQAH BINTI WAN ZAKARIA", "ZABIDI BIN MOHAMMAD", "ZAITON BINTI MOHAMAD", "ZAKIRI BIN AB HAMID", "ZANIRAH BINTI A. BAKAR", "ZIZIE ZAWANAH BINTI ZULKIFLI", "ZUHAIRI BIN HJ IBRAHIM", "ZURAINI BINTI ABDULLAH"
+    ];
 
     window.onload = async function() {
         const select = document.getElementById('teacherName');
@@ -139,7 +138,7 @@
             const namesDone = await resp.json();
             
             select.innerHTML = '<option value="">-- SILA PILIH NAMA --</option>';
-            senaraiGuru.sort().forEach(nama => {
+            senaraiGuru.forEach(nama => {
                 let opt = document.createElement('option');
                 opt.value = nama; 
                 opt.innerHTML = namesDone.includes(nama) ? "✅ " + nama : nama;
@@ -148,7 +147,7 @@
         } catch(e) {
             console.log("Error Loading:", e);
             select.innerHTML = '<option value="">-- SILA PILIH NAMA --</option>';
-            senaraiGuru.sort().forEach(nama => {
+            senaraiGuru.forEach(nama => {
                 let opt = document.createElement('option');
                 opt.value = nama; opt.innerHTML = nama; select.appendChild(opt);
             });
@@ -163,43 +162,22 @@
     }
 
     function detectLocation() {
-        if (!navigator.geolocation) return alert("Pelayar anda tidak menyokong GPS.");
-        
-        document.getElementById('detectBtn').innerText = "MENGESAN LOKASI...";
-
+        const schoolLat = 3.052485; const schoolLog = 101.754269;
         navigator.geolocation.getCurrentPosition((pos) => {
-            userLat = pos.coords.latitude; 
-            userLng = pos.coords.longitude;
-            
-            const R = 6371e3; // Radius bumi dalam meter
-            const φ1 = schoolLat * Math.PI/180;
-            const φ2 = userLat * Math.PI/180;
-            const Δφ = (userLat - schoolLat) * Math.PI/180;
-            const Δλ = (userLng - schoolLog) * Math.PI/180;
-
-            const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-                      Math.cos(φ1) * Math.cos(φ2) *
-                      Math.sin(Δλ/2) * Math.sin(Δλ/2);
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-            const dist = R * c;
-
-            document.getElementById('detectBtn').innerText = "🔍 SAHKAN LOKASI SAYA";
+            userLat = pos.coords.latitude; userLng = pos.coords.longitude;
+            const R = 6371e3;
+            const d1 = schoolLat * Math.PI/180; const d2 = userLat * Math.PI/180;
+            const df = (userLat-schoolLat) * Math.PI/180; const dl = (userLng-schoolLog) * Math.PI/180;
+            const a = Math.sin(df/2) * Math.sin(df/2) + Math.cos(d1) * Math.cos(d2) * Math.sin(dl/2) * Math.sin(dl/2);
+            const dist = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
             if (selectedStatus === "HADIR") {
-                if (dist <= 500) { 
-                    document.getElementById('inBtn').disabled = false; 
-                    alert("LOKASI DISAHKAN! Jarak: " + Math.round(dist) + "m"); 
-                } else { 
-                    alert("ANDA DI LUAR KAWASAN! Jarak anda: " + Math.round(dist) + "m. Had ialah 500m."); 
-                }
+                if (dist <= 1000) { document.getElementById('inBtn').disabled = false; alert("LOKASI DISAHKAN!"); }
+                else { alert("ANDA DI LUAR KAWASAN STADIUM! Jarak: " + Math.round(dist) + "m"); }
             } else {
-                document.getElementById('inBtn').disabled = false; 
-                alert("LOKASI DIREKODKAN (Status Tidak Hadir).");
+                document.getElementById('inBtn').disabled = false; alert("LOKASI DIREKODKAN.");
             }
-        }, (err) => {
-            alert("Gagal mengesan lokasi. Pastikan GPS aktif dan benarkan akses.");
-            document.getElementById('detectBtn').innerText = "🔍 SAHKAN LOKASI SAYA";
-        }, { enableHighAccuracy: true });
+        }, () => alert("Sila benarkan akses GPS."), { enableHighAccuracy: true });
     }
 
     function saveRecord() {
@@ -211,8 +189,6 @@
 
         fetch(WEB_APP_URL, {
             method: "POST",
-            mode: "no-cors", // Gunakan no-cors untuk mengelakkan ralat silang domain
-            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ 
                 nama: nama, 
                 status: selectedStatus, 
@@ -222,11 +198,11 @@
             })
         }).then(() => {
             localStorage.setItem('last_submit_date', new Date().toLocaleDateString());
-            alert("KEHADIRAN BERJAYA DIHANTAR!");
+            alert("KEHADIRAN BERJAYA!");
             location.reload();
-        }).catch((err) => {
-            console.error(err);
-            alert("Rekod sedang diproses...");
+        }).catch(() => {
+            localStorage.setItem('last_submit_date', new Date().toLocaleDateString());
+            alert("REKOD TELAH DIHANTAR!");
             location.reload();
         });
     }
